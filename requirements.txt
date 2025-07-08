@@ -1,0 +1,20 @@
+# Core Libraries
+numpy>=1.24
+pandas>=2.0
+
+# Plotting and Visualization
+matplotlib>=3.7
+seaborn>=0.12
+
+# For optional interactive or advanced agent-based modeling
+mesa>=1.2.1
+
+# Jupyter 
+notebook>=7.0
+jupyterlab>=4.0
+
+# For statistical distributions and potential copula extensions
+scipy>=1.11
+
+#  progress bars for simulation runs
+tqdm>=4.66
