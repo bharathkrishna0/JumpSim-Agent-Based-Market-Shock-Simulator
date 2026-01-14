@@ -1,0 +1,78 @@
+{
+  "experiment_name": "baseline_jump_emergence",
+  "description": "Baseline configuration for studying endogenous price jumps in JumpSim.",
+  
+  "random_seed": 123456,
+
+  "simulation": {
+    "time_steps": 5000,
+    "log_output": "results/baseline_prices.csv"
+  },
+
+  "market": {
+    "initial_price": 100.0,
+    "liquidity": 1200.0,
+    "impact_coefficient": 1.0,
+    "volatility_decay": 0.94,
+    "max_price_change": 5.0
+  },
+
+  "population": {
+    "num_agents": 400,
+
+    "agent_mix": {
+      "retail_share": 0.60,
+      "institution_share": 0.30,
+      "noise_share": 0.10
+    }
+  },
+
+  "agents": {
+    "retail": {
+      "aggressiveness": 1.0,
+      "risk_aversion": 0.20,
+      "network_influence": 0.70,
+      "noise_std": 0.60,
+      "belief_update_rate": 0.05,
+      "liquidity_tolerance": 0.02
+    },
+
+    "institution": {
+      "aggressiveness": 0.50,
+      "risk_aversion": 0.80,
+      "network_influence": 0.10,
+      "noise_std": 0.20,
+      "belief_update_rate": 0.03,
+      "liquidity_tolerance": 0.05
+    },
+
+    "noise": {
+      "aggressiveness": 0.20,
+      "risk_aversion": 0.10,
+      "network_influence": 0.00,
+      "noise_std": 1.00,
+      "belief_update_rate": 0.01,
+      "liquidity_tolerance": 0.01
+    }
+  },
+
+  "news_process": {
+    "calm_arrival_prob": 0.01,
+    "stress_arrival_prob": 0.05,
+    "calm_scale": 2.0,
+    "stress_scale": 8.0,
+    "regime_switch_to_stress": 0.002,
+    "regime_switch_to_calm": 0.010
+  },
+
+  "information_flow": {
+    "base_attention": 0.60,
+    "max_propagation_steps": 3,
+    "temporal_decay": 0.80
+  },
+
+  "statistics": {
+    "jump_threshold": 0.08,
+    "ewma_decay": 0.94
+  }
+}
