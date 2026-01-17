@@ -1,4 +1,4 @@
-# 📈 JumpSim: Agent-Based Market Shock Simulator
+#  JumpSim: Agent-Based Market Shock Simulator
 
 JumpSim is a simulation framework that models asset price dynamics through agent-based interactions and information-driven market shocks. Unlike traditional stochastic models, JumpSim allows price jumps to **emerge endogenously** from trader behavior, herding, and sudden external news events.
 
@@ -52,3 +52,5 @@ git clone https://github.com/bharathkrishna0/jumpsim.git
 cd jumpsim
 pip install -r requirements.txt
 python main.py
+
+by Bharath Krishna
