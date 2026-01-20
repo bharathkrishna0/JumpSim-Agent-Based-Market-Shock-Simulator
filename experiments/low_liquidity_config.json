@@ -1,0 +1,78 @@
+{
+  "experiment_name": "low_liquidity_fragility",
+  "description": "Stress scenario with severely reduced market depth to study price impact amplification and jump formation.",
+  
+  "random_seed": 246810,
+
+  "simulation": {
+    "time_steps": 5000,
+    "log_output": "results/low_liquidity_prices.csv"
+  },
+
+  "market": {
+    "initial_price": 100.0,
+    "liquidity": 300.0,
+    "impact_coefficient": 1.4,
+    "volatility_decay": 0.94,
+    "max_price_change": 12.0
+  },
+
+  "population": {
+    "num_agents": 400,
+
+    "agent_mix": {
+      "retail_share": 0.55,
+      "institution_share": 0.35,
+      "noise_share": 0.10
+    }
+  },
+
+  "agents": {
+    "retail": {
+      "aggressiveness": 1.1,
+      "risk_aversion": 0.25,
+      "network_influence": 0.60,
+      "noise_std": 0.50,
+      "belief_update_rate": 0.05,
+      "liquidity_tolerance": 0.02
+    },
+
+    "institution": {
+      "aggressiveness": 0.45,
+      "risk_aversion": 0.85,
+      "network_influence": 0.10,
+      "noise_std": 0.20,
+      "belief_update_rate": 0.03,
+      "liquidity_tolerance": 0.06
+    },
+
+    "noise": {
+      "aggressiveness": 0.25,
+      "risk_aversion": 0.10,
+      "network_influence": 0.00,
+      "noise_std": 1.10,
+      "belief_update_rate": 0.01,
+      "liquidity_tolerance": 0.01
+    }
+  },
+
+  "news_process": {
+    "calm_arrival_prob": 0.01,
+    "stress_arrival_prob": 0.04,
+    "calm_scale": 2.0,
+    "stress_scale": 10.0,
+    "regime_switch_to_stress": 0.003,
+    "regime_switch_to_calm": 0.012
+  },
+
+  "information_flow": {
+    "base_attention": 0.60,
+    "max_propagation_steps": 3,
+    "temporal_decay": 0.80
+  },
+
+  "statistics": {
+    "jump_threshold": 0.07,
+    "ewma_decay": 0.94
+  }
+}
